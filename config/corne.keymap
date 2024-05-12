@@ -13,9 +13,18 @@
         compatible = "zmk,combos";
 
         Opt.layer {
-            bindings = <&to 3>;
-            key-positions = <36 38>;
-            layers = <1>;
+            bindings = <&to 4>;
+            key-positions = <0 37>;
+        };
+
+        Pil.Layer {
+            bindings = <&mo 2>;
+            key-positions = <37 36>;
+        };
+
+        Funk.Layer {
+            bindings = <&mo 3>;
+            key-positions = <37 38>;
         };
     };
 
@@ -54,28 +63,37 @@
 
         Pil {
             bindings = <
-&kp ESCAPE  &trans     &trans     &trans     &trans     &trans          &kp SLASH     &kp NUMBER_1  &kp UP_ARROW  &kp NUMBER_3  &trans         &trans
+&kp ESCAPE  &trans     &trans     &trans     &trans     &trans          &kp SLASH     &kp NUMBER_1  &kp UP_ARROW  &kp NUMBER_3  &trans         &to 0
 &kp TAB     &kp LG(A)  &trans     &trans     &trans     &kp RS(RALT)    &kp SQT       &kp LEFT      &kp DOWN      &kp RIGHT     &kp LESS_THAN  &trans
-&kp LCTRL   &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans          &kp NUMBER_0  &kp N7        &kp N8        &kp N9        &trans         &kp DELETE
-                                  &kp LSHFT  &to 0      &kp LEFT_GUI    &kp SPACE     &kp ENTER     &kp LEFT_ALT
+&kp LCTRL   &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp RG(N)       &kp NUMBER_0  &kp N7        &kp N8        &kp N9        &trans         &kp DELETE
+                                  &kp LSHFT  &trans     &kp LEFT_GUI    &kp SPACE     &kp ENTER     &kp LEFT_ALT
+            >;
+        };
+
+        Funky {
+            bindings = <
+&kp ESCAPE  &trans     &trans     &trans     &trans     &kp GLOBE       &kp F6     &kp F10    &kp F11       &kp F12  &trans         &to 0
+&kp TAB     &kp LG(A)  &trans     &trans     &trans     &kp RS(RALT)    &kp F3     &kp F7     &kp F8        &kp F9   &kp LESS_THAN  &trans
+&kp LCTRL   &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans          &kp F5     &kp F1     &kp F2        &kp F9   &trans         &kp DELETE
+                                  &kp LSHFT  &trans     &kp LEFT_GUI    &kp SPACE  &kp ENTER  &kp LEFT_ALT
             >;
         };
 
         Opt {
             bindings = <
-&kp ESCAPE  &trans        &trans        &trans        &trans        &trans          &kp KP_DIVIDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LESS_THAN  &trans
+&kp ESCAPE  &trans        &trans        &trans        &trans        &trans          &kp KP_DIVIDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LESS_THAN  &to 0
 &kp TAB     &bt BT_PRV    &bt BT_NXT    &trans        &trans        &trans          &kp SQT        &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans         &trans
 &kp LCTRL   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp NUMBER_0   &kp N7        &kp N8        &kp N9        &trans         &kp BACKSPACE
                                         &kp LGUI      &to 0         &kp SPACE       &kp RET        &kp ENTER     &kp RALT
             >;
         };
 
-        Funky {
+        Fn {
             bindings = <
-&kp ESCAPE  &trans     &trans     &trans     &trans     &trans          &kp F6     &kp F10    &kp F11       &kp F12  &trans         &trans
+&kp ESCAPE  &trans     &trans     &trans     &trans     &trans          &kp F6     &kp F10    &kp F11       &kp F12  &trans         &to 0
 &kp TAB     &kp LG(A)  &trans     &trans     &trans     &kp RS(RALT)    &kp F3     &kp F7     &kp F8        &kp F9   &kp LESS_THAN  &trans
-&kp LCTRL   &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans          &trans     &kp F1     &kp F2        &kp F9   &trans         &kp BACKSPACE
-                                  &kp LSHFT  &to 0      &kp LEFT_GUI    &kp SPACE  &kp ENTER  &kp LEFT_ALT
+&kp LCTRL   &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans          &trans     &kp F1     &kp F2        &kp F9   &trans         &kp DELETE
+                                  &kp LSHFT  &trans     &kp LEFT_GUI    &kp SPACE  &kp ENTER  &kp LEFT_ALT
             >;
         };
     };
