@@ -9,10 +9,20 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        Opt.layer {
+            bindings = <&to 3>;
+            key-positions = <36 38>;
+            layers = <1>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        Alfa {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -20,14 +30,14 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp E           &kp R  &kp T           &kp Y      &kp U  &kp I      &kp O      &kp P       &trans
-&kp TAB    &kp A  &kp S  &kp D           &kp F  &kp G           &kp H      &kp J  &kp K      &kp L      &trans      &trans
-&kp LCTRL  &kp Z  &kp X  &kp C           &kp V  &kp B           &kp N      &kp M  &kp MINUS  &kp COMMA  &kp PERIOD  &kp BACKSPACE
-                         &kp LEFT_SHIFT  &mo 1  &kp LEFT_GUI    &kp SPACE  &mo 2  &kp RALT
+&kp ESC    &kp Q  &kp W  &kp E           &kp R  &kp T           &kp Y      &kp U      &kp I      &kp O      &kp P       &trans
+&kp TAB    &kp A  &kp S  &kp D           &kp F  &kp G           &kp H      &kp J      &kp K      &kp L      &trans      &trans
+&kp LCTRL  &kp Z  &kp X  &kp C           &kp V  &kp B           &kp N      &kp M      &kp MINUS  &kp COMMA  &kp PERIOD  &kp BACKSPACE
+                         &kp LEFT_SHIFT  &mo 1  &kp LEFT_GUI    &kp SPACE  &kp ENTER  &kp RALT
             >;
         };
 
-        lower_layer {
+        Num {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -35,34 +45,37 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &bt BT_NXT    &trans        &trans        &trans        &trans          &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &kp BSPC
-&kp TAB     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
-&kp LCTRL   &trans        &trans        &trans        &trans        &trans          &kp NUMBER_0  &kp N7        &kp N8        &trans        &trans  &kp BACKSPACE
-                                        &kp LGUI      &mo 0         &kp SPACE       &kp RET       &mo 2         &kp RALT
+&kp ESCAPE  &trans     &trans     &trans     &trans     &trans          &kp SLASH     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans         &trans
+&kp TAB     &kp LG(A)  &trans     &trans     &trans     &trans          &kp SQT       &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp LESS_THAN  &trans
+&kp LCTRL   &kp RG(Z)  &kp RG(X)  &kp RG(C)  &kp RG(V)  &kp RG(N)       &kp NUMBER_0  &kp N7        &kp N8        &kp N9        &kp KP_DOT     &kp DELETE
+                                  &kp LSHFT  &to 0      &kp LEFT_GUI    &kp SPACE     &kp ENTER     &kp RALT
             >;
         };
 
-        raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        Pil {
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&kp ESCAPE  &trans     &trans     &trans     &trans     &trans          &kp SLASH     &kp NUMBER_1  &kp UP_ARROW  &kp NUMBER_3  &trans         &trans
+&kp TAB     &kp LG(A)  &trans     &trans     &trans     &kp RS(RALT)    &kp SQT       &kp LEFT      &kp DOWN      &kp RIGHT     &kp LESS_THAN  &trans
+&kp LCTRL   &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans          &kp NUMBER_0  &kp N7        &kp N8        &kp N9        &trans         &kp DELETE
+                                  &kp LSHFT  &to 0      &kp LEFT_GUI    &kp SPACE     &kp ENTER     &kp LEFT_ALT
             >;
         };
 
-        raise_layer {
+        Opt {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&kp ESCAPE  &trans        &trans        &trans        &trans        &trans          &kp KP_DIVIDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LESS_THAN  &trans
+&kp TAB     &bt BT_PRV    &bt BT_NXT    &trans        &trans        &trans          &kp SQT        &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans         &trans
+&kp LCTRL   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp NUMBER_0   &kp N7        &kp N8        &kp N9        &trans         &kp BACKSPACE
+                                        &kp LGUI      &to 0         &kp SPACE       &kp RET        &kp ENTER     &kp RALT
+            >;
+        };
+
+        Funky {
+            bindings = <
+&kp ESCAPE  &trans     &trans     &trans     &trans     &trans          &kp F6     &kp F10    &kp F11       &kp F12  &trans         &trans
+&kp TAB     &kp LG(A)  &trans     &trans     &trans     &kp RS(RALT)    &kp F3     &kp F7     &kp F8        &kp F9   &kp LESS_THAN  &trans
+&kp LCTRL   &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans          &trans     &kp F1     &kp F2        &kp F9   &trans         &kp BACKSPACE
+                                  &kp LSHFT  &to 0      &kp LEFT_GUI    &kp SPACE  &kp ENTER  &kp LEFT_ALT
             >;
         };
     };
