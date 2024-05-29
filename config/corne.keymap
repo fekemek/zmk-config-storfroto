@@ -9,24 +9,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        Opt.layer {
-            bindings = <&to 4>;
-            key-positions = <0 37>;
-        };
-
-        Pil.Layer {
-            bindings = <&mo 2>;
-            key-positions = <37 36>;
-        };
-
-        Funk.Layer {
-            bindings = <&mo 3>;
-            key-positions = <37 38>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -39,10 +22,19 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp E           &kp R  &kp T           &kp Y      &kp U      &kp I      &kp O      &kp P       &trans
-&kp TAB    &kp A  &kp S  &kp D           &kp F  &kp G           &kp H      &kp J      &kp K      &kp L      &trans      &trans
-&kp LCTRL  &kp Z  &kp X  &kp C           &kp V  &kp B           &kp N      &kp M      &kp MINUS  &kp COMMA  &kp PERIOD  &kp BACKSPACE
-                         &kp LEFT_SHIFT  &mo 1  &kp LEFT_GUI    &kp SPACE  &kp ENTER  &kp RALT
+&kp ESC    &kp Q  &kp W  &kp E           &kp R  &kp T           &kp Y      &kp U        &kp I      &kp O      &kp P          &kp LEFT_BRACKET
+&kp TAB    &kp A  &kp S  &kp D           &kp F  &kp G           &kp H      &kp J        &kp K      &kp L      &kp SEMICOLON  &kp DOUBLE_QUOTES
+&kp LCTRL  &kp Z  &kp X  &kp C           &kp V  &kp B           &kp N      &kp M        &kp MINUS  &kp COMMA  &kp PERIOD     &kp BACKSPACE
+                         &kp LEFT_SHIFT  &mo 1  &kp LEFT_GUI    &kp SPACE  &lt 2 ENTER  &kp RALT
+            >;
+        };
+
+        Pil {
+            bindings = <
+&kp ESCAPE  &kp NUMBER_1   &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                        &kp SLASH        &kp NUMBER_1  &kp UP_ARROW  &kp NUMBER_3  &kp EQUAL          &kp MINUS
+&kp TAB     &kp NUMBER_6   &kp N7        &kp N8        &kp N9        &mt RS(RIGHT_ALT) NUMBER_0    &kp RIGHT_SHIFT  &kp LEFT      &kp DOWN      &kp RIGHT     &kp RIGHT_BRACKET  &trans
+&kp LCTRL   &kp LESS_THAN  &kp GRAVE     &trans        &trans        &trans                        &kp RCTRL        &kp N7        &kp N8        &kp N9        &kp DOUBLE_QUOTES  &kp BACKSPACE
+                                         &kp LSHFT     &to 0         &kp LEFT_GUI                  &kp SPACE        &lt 2 ENTER   &kp LEFT_ALT
             >;
         };
 
@@ -54,46 +46,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &trans     &trans     &trans     &trans     &trans          &kp SLASH     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans         &trans
-&kp TAB     &kp LG(A)  &trans     &trans     &trans     &trans          &kp SQT       &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp LESS_THAN  &trans
-&kp LCTRL   &kp RG(Z)  &kp RG(X)  &kp RG(C)  &kp RG(V)  &kp RG(N)       &kp NUMBER_0  &kp N7        &kp N8        &kp N9        &kp KP_DOT     &kp DELETE
-                                  &kp LSHFT  &to 0      &kp LEFT_GUI    &kp SPACE     &kp ENTER     &kp RALT
-            >;
-        };
-
-        Pil {
-            bindings = <
-&kp ESCAPE  &trans     &trans     &trans     &trans     &trans          &kp SLASH     &kp NUMBER_1  &kp UP_ARROW  &kp NUMBER_3  &trans         &to 0
-&kp TAB     &kp LG(A)  &trans     &trans     &trans     &kp RS(RALT)    &kp SQT       &kp LEFT      &kp DOWN      &kp RIGHT     &kp LESS_THAN  &trans
-&kp LCTRL   &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp RG(N)       &kp NUMBER_0  &kp N7        &kp N8        &kp N9        &trans         &kp DELETE
-                                  &kp LSHFT  &trans     &kp LEFT_GUI    &kp SPACE     &kp ENTER     &kp LEFT_ALT
-            >;
-        };
-
-        Funky {
-            bindings = <
-&kp ESCAPE  &trans     &trans     &trans     &trans     &kp GLOBE       &kp F6     &kp F10    &kp F11       &kp F12  &trans         &to 0
-&kp TAB     &kp LG(A)  &trans     &trans     &trans     &kp RS(RALT)    &kp F3     &kp F7     &kp F8        &kp F9   &kp LESS_THAN  &trans
-&kp LCTRL   &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans          &kp F5     &kp F1     &kp F2        &kp F9   &trans         &kp DELETE
-                                  &kp LSHFT  &trans     &kp LEFT_GUI    &kp SPACE  &kp ENTER  &kp LEFT_ALT
-            >;
-        };
-
-        Opt {
-            bindings = <
-&kp ESCAPE  &trans        &trans        &trans        &trans        &trans          &kp KP_DIVIDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LESS_THAN  &to 0
-&kp TAB     &bt BT_PRV    &bt BT_NXT    &trans        &trans        &trans          &kp SQT        &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans         &trans
-&kp LCTRL   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp NUMBER_0   &kp N7        &kp N8        &kp N9        &trans         &kp BACKSPACE
-                                        &kp LGUI      &to 0         &kp SPACE       &kp RET        &kp ENTER     &kp RALT
-            >;
-        };
-
-        Fn {
-            bindings = <
-&kp ESCAPE  &trans     &trans     &trans     &trans     &trans          &kp F6     &kp F10    &kp F11       &kp F12  &trans         &to 0
-&kp TAB     &kp LG(A)  &trans     &trans     &trans     &kp RS(RALT)    &kp F3     &kp F7     &kp F8        &kp F9   &kp LESS_THAN  &trans
-&kp LCTRL   &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans          &trans     &kp F1     &kp F2        &kp F9   &trans         &kp DELETE
-                                  &kp LSHFT  &trans     &kp LEFT_GUI    &kp SPACE  &kp ENTER  &kp LEFT_ALT
+&kp ESCAPE  &bt BT_NXT  &kp F1   &kp F2     &kp F4   &kp F3          &kp SLASH     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans         &trans
+&kp TAB     &kp LG(A)   &kp F7   &kp F8     &kp F9   &kp F6          &kp SQT       &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp LESS_THAN  &trans
+&kp LCTRL   &kp RG(Z)   &kp F10  &kp F11    &kp F12  &kp F5          &kp NUMBER_0  &kp N7        &kp N8        &kp N9        &kp KP_DOT     &kp DELETE
+                                 &kp LSHFT  &to 0    &kp LEFT_GUI    &kp SPACE     &kp ENTER     &kp RALT
             >;
         };
     };
