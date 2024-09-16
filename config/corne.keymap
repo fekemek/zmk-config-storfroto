@@ -72,5 +72,14 @@
                                        &none         &trans  &none        &none  &trans  &none
             >;
         };
+
+        Kvikk {
+            bindings = <
+&trans  &kp X  &kp C  &kp O     &kp APOS  &kp U     &kp H   &kp K   &kp M      &kp B    &kp J    &kp W
+&trans  &kp L  &kp R  &kp A     &kp E     &kp I     &kp D   &kp T   &kp N      &kp S    &kp G    &kp V
+&trans  &kp Q  &kp Z  &kp LBKT  &kp SEMI  &kp Y     &kp F   &kp P   &kp SLASH  &kp DOT  &kp DOT  &trans
+                      &trans    &trans    &trans    &trans  &trans  &trans
+            >;
+        };
     };
 };
