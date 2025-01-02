@@ -51,7 +51,7 @@
             bindings = <
 &trans  &trans  &trans    &kp UP_ARROW     &trans       &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LEFT  &kp DOWN         &kp RIGHT    &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans    &kp LS(LC(TAB))  &kp LS(TAB)  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &kp LS(LC(TAB))  &kp LC(TAB)  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                           &trans           &trans       &trans    &trans  &trans  &trans
             >;
         };
