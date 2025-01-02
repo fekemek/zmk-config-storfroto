@@ -39,19 +39,19 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC     &kp Q  &kp W  &kp E  &kp R     &kp T           &kp Y         &kp U      &kp I        &kp O      &kp P          &kp LEFT_BRACKET
-&kp TAB     &kp A  &kp S  &kp D  &kp F     &kp G           &kp H         &kp J      &kp K        &kp L      &kp SEMICOLON  &kp SINGLE_QUOTE
-&iOS_Shift  &kp Z  &kp X  &kp C  &kp V     &kp B           &kp N         &kp M      &kp SLASH    &kp COMMA  &kp PERIOD     &kp BACKSPACE
-                          &mo 1  &kp BSPC  &kp LEFT_GUI    &kp LEFT_ALT  &kp SPACE  &lt 0 ENTER
+&kp ESC         &kp A          &kp W  &kp E        &kp L         &kp D               &kp Y         &kp U      &kp I        &kp O      &kp P          &kp LEFT_BRACKET
+&kp TAB         &kp LG(Z)      &kp S  &kp E        &kp P         &kp LG(KP_MINUS)    &kp H         &kp J      &kp K        &kp L      &kp SEMICOLON  &kp SINGLE_QUOTE
+&kp LEFT_SHIFT  &kp LS(LG(Z))  &kp X  &kp C        &kp V         &kp LG(SLASH)       &kp N         &kp M      &kp SLASH    &kp COMMA  &kp PERIOD     &kp BACKSPACE
+                                      &lt 2 ENTER  &kp LEFT_GUI  &mo 1               &kp LEFT_ALT  &kp SPACE  &lt 0 ENTER
             >;
         };
 
-        Pil {
+        layer_2 {
             bindings = <
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4       &kp N5                        &kp LS(LEFT_ALT)  &none            &kp UP_ARROW     &none      &kp RG(A)  &kp RG(F)
-&trans  &kp NUMBER_6  &kp N7        &kp N8        &kp N9             &mt RS(RIGHT_ALT) NUMBER_0    &kp RIGHT_SHIFT   &kp LEFT         &kp DOWN         &kp RIGHT  &kp RG(C)  &kp RG(V)
-&trans  &kp GRAVE     &kp MINUS     &kp EQUAL     &kp RIGHT_BRACKET  &kp BACKSLASH                 &kp RIGHT_ALT     &kp NON_US_BSLH  &kp NON_US_HASH  &kt LCTRL  &kp RG(X)  &kp RG(Z)
-                                    &trans        &trans             &trans                        &trans            &trans           &lt 2 ENTER
+&trans  &trans  &trans    &kp UP_ARROW     &trans       &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LEFT  &kp DOWN         &kp RIGHT    &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans    &kp LS(LC(TAB))  &kp LS(TAB)  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                          &trans           &trans       &trans    &trans  &trans  &trans
             >;
         };
 
@@ -61,15 +61,6 @@
 &none  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &none   &kp GLOBE    &none  &none   &none  &none  &none  &none
 &none  &bt BT_CLR      &iOS_Shift    &OptBsp       &none   &none        &none  &none   &none  &none  &none  &none
                                      &none         &trans  &none        &none  &trans  &none
-            >;
-        };
-
-        Kvikk {
-            bindings = <
-&trans  &kp X  &kp C  &kp O     &kp APOS  &kp U     &kp H   &kp K   &kp M      &kp B    &kp J    &kp W
-&trans  &kp L  &kp R  &kp A     &kp E     &kp I     &kp D   &kp T   &kp N      &kp S    &kp G    &kp V
-&trans  &kp Q  &kp Z  &kp LBKT  &kp SEMI  &kp Y     &kp F   &kp P   &kp SLASH  &kp DOT  &kp DOT  &trans
-                      &trans    &trans    &trans    &trans  &trans  &trans
             >;
         };
     };
